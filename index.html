@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, user-scalable=no, maximum-scale=1, minimum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>show me the world</title>
+    <meta name="description" content="interactive train ride by stephan e perez">
+
+    <meta property="og:url" content="https://sepweb.dev/showmetheworld">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="show me the world">
+    <meta property="og:description" content="interactive train ride by stephan e perez">
+    <meta property="og:image" content="https://sepweb.dev/showmetheworld/ogImage.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="627">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="sepweb.dev/showmetheworld">
+    <meta property="twitter:url" content="https://sepweb.dev/showmetheworld">
+    <meta name="twitter:title" content="show me the world">
+    <meta name="twitter:description" content="interactive train ride by stephan e perez">
+    <meta name="twitter:image" content="https://sepweb.dev/showmetheworld/ogImage.webp">
+
+
+    <link rel="icon" href="./favicon/favicon.ico" />
+    <title>show me the world</title>
+    <script src="https://kit.fontawesome.com/dfd3e08cad.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script> -->
+  </head>
+  <body>
+    <div class="start-page js-start-page">       
+      <div class="top-section js-top-section">
+        <div class="globe-container"><i class="fa-solid fa-globe"></i></div>
+        <div class=" js-language-select">
+          <select class="" name="langsel"></select>
+        </div>
+        <button class="js-mic-button mic-button">start audio!</button>
+        <button class="js-go-button go-button hidden">go!</button>
+      </div> 
+      <div class="firefox-notice js-firefox-notice hidden">
+        Firefox not supported. Please use Chrome, Edge or another browser supporting the Windows Speech API.
+      </div>
+      <div class="audio-select-container js-audio-dev-sel hidden">
+        <label for="audio-source">audio source: </label>
+        <select id="audio-source"></select>
+      </div>
+      <h1>
+        <em>show me the world</em>
+      </h1>
+      <p>
+        Interactive Artwork made by <a href="https://stephaneperez.net">Stephan E Perez</a> for the 2024 “Love Peace Harmony in Life Art & Music Festival” in MaeWang Sanctuary, Chiang Mai, Thailand. The festival is organized by Chumpol Taksapornchai and Juno's Jungle.
+      </p> 
+      <div class="notes-images-container">
+        <div class="notes-container">
+          <div class="instructions">
+            <h2>
+              instructions
+            </h2>
+            <p><em>All aboard the World Train!</em></p>
+            <ul>
+              <li>Press 'start audio' button and select your microphone</li>
+              <li>Select your language and press 'go!'. The train will depart.</li>
+              <li>Say 1 or 2 words into the microphone</li>
+              <li>The World Train will listen to you and take you in new directions</li>
+              <li>Watch as you ride past new people, places and things</li>
+              <li>Repeat!</li>
+            </ul>
+          </div>
+          <div class="notes">
+            <h2>notes</h2>
+            <ul>
+              <li>Sometimes the train will combine your words with older phrases</li>
+              <li>Sometimes Ganesha will appear. He looks very familiar...</li>
+              <li>The language can also be changed while riding the train:</li>
+                <ul>
+                  <li>E: English (en-US)</li>
+                  <li>T: Thai (th-TH)</li>
+                  <li>J: Japanese (ja-JP)</li>
+                  <li>C: Chinese (zh-CN)</li>
+                  <li>F: French (fr-FR)</li>              
+                  <li>D: German (de-DE)</li>
+                </ul>
+              <li>High volume setting recommended.</li>
+              <li>Some iPhones might not display the motion lines</li>
+            </ul>
+          </div>  
+          <div class="img-container preview-image">
+            <img src="./ogImage.webp" alt="">
+            <div class="img-label">view from the World Train</div>
+          </div>                      
+        </div>     
+        <div class="start-page-images">
+          <div class="img-container">
+            <img src="images/startPage/poster.jpg" alt="">
+            <div class="img-label">LPHIL Poster</div>
+          </div>
+          <div class="img-container">
+            <img src="images/startPage/tua.jpg" alt="a man in round glasses, kind of looks like ganesha">
+            <div class="img-label">Chumpol Taksapornchai</div>
+          </div>
+          <div class="img-container">
+            <img src="images/startPage/juno.jpg" alt="it's juno. she's her own jungle">
+            <div class="img-label">Juno's Jungle</div>
+          </div>
+          <div class="img-container">
+            <img src="images/tua/10.webp" alt="">
+            <div class="img-label">Ganesha</div>
+          </div>
+        </div> 
+      </div>         
+    </div>
+    <canvas id="main">
+    </canvas>
+    <div class="inactivity-prompt js-inactivity-prompt hidden">say something</div>
+    <div class="language-change-display js-language-change-display hidden"></div>
+    <div class="loading-notice js-loading-notice hidden">LOADING</div>
+    <script type="text/javascript" src="/tokenizer.js"></script>
+    <!-- <script type="application/javascript" src="/train_test_a.js"></script> -->
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>

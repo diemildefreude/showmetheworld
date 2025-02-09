@@ -1,0 +1,183 @@
+body
+{
+  background-color: indigo;
+  position: relative;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+canvas
+{
+  width: calc((100% - 100vw) - 100%);
+  cursor:none;
+}
+.hidden
+{
+  display: none;
+}
+.language-change-display, .inactivity-prompt, .loading-notice
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 6rem;
+  color: rgb(89, 242, 89);
+}
+.inactivity-prompt
+{
+  font-size: 5rem;
+  color: rgb(154, 32, 219);
+}
+.loading-notice
+{
+  color: rgb(134, 215, 255);
+  font-size: 5rem;
+  animation: loadingFade 2s forwards infinite;
+}
+@keyframes loadingFade
+{
+    0%, 100%
+    {
+        opacity: 0;
+    }
+    50%
+    {
+        opacity: 1;
+    }
+}
+.start-page
+{
+  color: rgb(134, 215, 255);
+  width: clamp(200px, 100%, 800px);
+  margin: 0 auto; 
+  padding: 1rem;
+}
+.start-page a:link, .start-page a:visited
+{
+  color: rgb(134, 215, 255);
+}
+select, button
+{
+  height: 100%;
+}
+button
+{
+  min-width: 100px;
+}
+.mic-button
+{
+  background-color: rgb(223, 115, 14);
+  color: white;
+}
+.mic-button:hover
+{
+  background-color: rgb(255, 218, 97);
+  color:black;
+}
+.go-button
+{
+  background-color: blue;
+  color:aquamarine;
+}
+.go-button:hover
+{
+  background-color: aquamarine;
+  color: black;
+}
+h2
+{
+  margin: 0 0 1rem;  
+  font-weight: 1;
+}
+h1
+{
+  margin: 1rem 0 2rem;
+  font-weight: 1;
+  font-size: 4rem;
+  line-height: 1.3;
+  text-align: center;
+}
+.audio-select-container
+{
+  margin: 1rem auto 0;
+  width: fit-content;
+}
+p
+{   
+  line-height: 1.7;
+}
+.top-section
+{
+  margin: 0 auto;
+  width:fit-content;
+  padding: 1rem 0 0;
+  position: relative;
+  height: 50px;
+  display: flex;
+  gap: 1rem;
+}
+.globe-container i
+{
+  display: block;
+  font-size: 32px;
+
+}
+.instructions
+{  
+  background-color: white;
+  color: rgb(223, 115, 14);
+  padding: 1rem;
+  margin: 0 0 1rem;
+}
+.notes
+{
+  background-color: rgb(58, 12, 222);
+  color: rgb(4, 247, 227);
+  padding: 1rem;
+}
+.notes-container p
+{
+  margin: 0 0 1rem;
+}
+.notes-images-container
+{
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 0;
+}
+.img-container
+{
+  margin: 0 0 1rem;
+}
+.preview-image
+{
+  margin: 1rem 0;
+}
+.img-label
+{
+  padding: 0.5rem 0 0;
+  text-align: center;
+}
+img
+{
+  width:100%;
+}
+@media (min-width:500px)
+{
+  .notes-images-container
+  {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .start-page-images
+  {
+    flex-basis: clamp(200px, calc(50% - 1rem), 300px);
+  }
+}
+.firefox-notice
+{
+  background-color: red;
+  color: yellow;
+  margin: 1rem 0; 
+  padding: 1rem;
+}
