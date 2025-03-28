@@ -20,6 +20,8 @@ prerequisites
 
 -a bing search api key from [portal.azure.com](https://portal.azure.com)
 
+-a local server that supports php 5.6+ (eg. xampp)
+
 setup
 --------
 1) set up a local server using something like [Xampp](https://www.apachefriends.org/download.html) 
