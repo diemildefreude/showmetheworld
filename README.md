@@ -30,5 +30,5 @@ setup
 4) go to the new directory in your terminal: `cd faces`.
 5) Initiate npm and install the three.js package: `npm i three`
 6) in smtw-backend, rename .env_example to .env and set the value of your API key there.
-7) for development, set the absolute fetch path for getSearchResults.php in the findImages() method. Then run: `npm run dev` and open the link shown in the terminal output. 
-8) for production, you can leave the relative path getSearchResults.php, run `npm run build` and open `localhost/showmetheworld/dist`
+7) for development, set the absolute fetch path to getSearchResults.php in the findImages() method. Then run: `npm run dev` and open the link shown in the terminal output. 
+8) for production, you can leave the relative path to getSearchResults.php, run `npm run build` and open `localhost/showmetheworld/dist`
