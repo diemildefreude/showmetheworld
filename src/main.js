@@ -85,11 +85,11 @@ let inactivityPrompt, inactivityShowTimeout;
 const inactivityTimeoutDur = 20000;
 const inactivityPromptDur = 3000;
 /*-----BING IMAGE SEARCH-----*/
-const searchApiKey = "your key here";
 const maxSearchImages = 8;
 const maxObjects = 50;
 let currentLanguage = "en-US";
-const languageOptions = ['en-US', 'th-TH', 'ja-JP', 'zh-CN','fr-FR', 
+const languageOptions = ['en-US', 'th-TH','fr-FR', 
+  //'ja-JP', 'zh-CN', 'ko-KR',
     'in-ID', 'es-ES', 'de-DE', 'nl-NL', 'he-IL', 'ru-RU'];
 let languageSelect, languageSelectContainer;
 
@@ -278,6 +278,10 @@ class TextObject
       if(language == 'ja-JP' || language == 'zh-CN')
       {
         fontFile += 'Noto Sans JP Light_Regular.json';
+      }
+      else if(language == 'ko-KR')
+      {
+        fontFile += 'Noto Sans KR Light_Regular.json';
       }
       else if(language == 'th-TH')
       {
@@ -1203,6 +1207,10 @@ function getGaneshaString()
   {
    ganesha = "ガネーシャ！";
   }
+  else if(currentLanguage == 'ko-KR')
+  {
+    ganesha = "가네샤!"
+  }
   else if(currentLanguage == 'es-ES')
   {
    ganesha = "¡¡¡GANESHA!!!";
@@ -1252,6 +1260,10 @@ function addGaneshaToPhrase(phrase)
   else if(currentLanguage == 'ja-JP')
   {
     output += "とガネーシャ！！";
+  }
+  else if(currentLanguage == 'ko-KR')
+  {
+    output += "그리고 가네샤!!";
   }
   else if(currentLanguage =='zh-CN')
   {
@@ -1437,12 +1449,13 @@ function setUpLanguageSelect()
   {
     if(e.key == 'e') { setLang('en-US')}
     else if(e.key == 't') { setLang('th-TH')}
-    else if(e.key == 'j') { setLang('ja-JP')}
+    //else if(e.key == 'j') { setLang('ja-JP')}
     else if(e.key == 'i') { setLang('in-ID')}
     else if(e.key == 'f') { setLang('fr-FR')}
     else if(e.key == 'd') { setLang('de-DE')}
     else if(e.key == 's') { setLang('es-ES')}
-    else if(e.key == 'c') { setLang('zh-CN')}
+    //else if(e.key == 'c') { setLang('zh-CN')}
+    //else if(e.key == 'k') { setLang('ko-KR')}
     else if(e.key == 'h') { setLang('he-IL')}
     else if(e.key == 'n') { setLang('nl-NL')}
     else if(e.key == 'r') { setLang('ru-RU')};    
@@ -1452,17 +1465,10 @@ function setUpLanguageSelect()
 
 function findImages(query)
 {
-  const searchEndPoint = `https://api.bing.microsoft.com/v7.0/images/search?q=${query}&setLang=${currentLanguage}`;
   return new Promise((resolve) =>
-  {
-    fetch(searchEndPoint, 
-    {
-      headers: 
-      {
-        'Ocp-Apim-Subscription-Key': searchApiKey,
-
-      }
-    })
+  { //if using npm dev, set fetch to your absolute path for the php file: 
+    //fetch(`http://localhost/website/showmetheworld/smtw-backend/getSearchResults.php?query=${encodeURIComponent(query)}&lang=${currentLanguage}`)
+    fetch(`../smtw-backend/getSearchResults.php?query=${encodeURIComponent(query)}&lang=${currentLanguage}`)
     .then(response => response.json())
     .then(data => 
     {
