@@ -23,10 +23,10 @@ prerequisites
 setup
 --------
 1) set up a local server using something like [Xampp](https://www.apachefriends.org/download.html) 
-2) start the local server. In Xampp, this is done by pressing the start buttons for Apache. (this and the previous step can be skipped if only running in dev mode)
+2) start the local server. In Xampp, this is done by pressing the start buttons for Apache.
 3) clone the repository to a folder within your localhost directory. (In the case of Xampp, probably c:/xampp/htdocs)
-4) in main.js, set searchApiKey (l.88) to your Bing API key.
-5) Go to the new directory in your terminal: `cd faces`.
-6) Initiate npm and install the three.js package: `npm i three`
-7) for development, run: `npm run dev` and open the link shown in the terminal output
-8) for production, run `npm run build` and open `localhost/showmetheworld/dist`
+4) go to the new directory in your terminal: `cd faces`.
+5) Initiate npm and install the three.js package: `npm i three`
+6) in smtw-backend, rename .env_example to .env and set the value of your API key there.
+7) for development, set the absolute fetch path for getSearchResults.php in the findImages() method. Then run: `npm run dev` and open the link shown in the terminal output. 
+8) for production, you can leave the relative path getSearchResults.php, run `npm run build` and open `localhost/showmetheworld/dist`
